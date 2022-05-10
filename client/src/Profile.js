@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ProfileStats from "./ProfileStats";
 import ProfileStreem from "./ProfileStreem";
 import ProfileQueue from "./ProfileQueue";
@@ -15,14 +15,13 @@ function Profile() {
             </div>
             <ProfileStats />
             <ProfileStreem />
-            <Switch>
-                <Route exact path="/userName/queue">
-                    <ProfileQueue />
-                </Route>
+            <Routes>
+                <Route exact path="/queue" element={<ProfileQueue />} />
+                {/* <ProfileQueue />
                 <Route exact path="/userName/savedReviews">
                     <ProfileSavedReviews />
-                </Route>
-            </Switch>
+                </Route> */}
+            </Routes>
         </div>
     );
 }
