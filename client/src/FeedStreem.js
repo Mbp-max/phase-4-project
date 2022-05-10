@@ -4,7 +4,7 @@ import NewReview from './NewReview';
 function FeedStreem() {
     return (
         <div className="FeedStreem">
-        <button> Add A Movie Review</button>
+        <button> New Review </button>
         <NewReview/>
         {/* <FeedReviewCards /> */}
         </div>
