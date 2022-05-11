@@ -1,19 +1,22 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import Feed from './Feed'
 
 function HomeSignIn() {
-    const [errorMessages, setErrorMessages] = useState({});
+  const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loginInfo, setLoginInfo] = useState([]);
   const [userData, setUserData] = useState([])
  
-//   function employeeDatabase() {
-//     fetch("http://localhost:9292/employees")
-//       .then((response) => response.json())
-//       .then((data) => setLoginInfo(data));
-//   }
+  function employeeDatabase() {
+    
+    fetch("http://localhost:3000/users", )
+      .then((response) => response.json())
+      .then((data) => setLoginInfo(data));
+      console.log(loginInfo)
+  }
 
-//   useEffect(employeeDatabase, [refetch]);
+  useEffect(employeeDatabase, []);
   
 
   
@@ -25,23 +28,23 @@ function HomeSignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // var { uname, pass } = document.forms[0];
+    var { uname, pass } = document.forms[0];
 
-    // // const userData = loginInfo.find((user) => user.username === uname.value);
-    // // console.log(userData);
-    // // setTaskData(userData.tasks);
+    // const userData = loginInfo.find((user) => user.username === uname.value);
+    // console.log(userData);
+    // setTaskData(userData.tasks);
     
-    // // setCurrentUser(userData.id)
+    // setCurrentUser(userData.id)
 
-    // if (userData) {
-    //   if (userData.password !== pass.value) {
-    //     setErrorMessages({ name: "pass", message: errors.pass });
-    //   } else {
-    //     setIsSubmitted(true);
-    //   }
-    // } else {
-    //   setErrorMessages({ name: "uname", message: errors.uname });
-    // }
+    if (userData) {
+      if (userData.password !== pass.value) {
+        setErrorMessages({ name: "pass", message: errors.pass });
+      } else {
+        setIsSubmitted(true);
+      }
+    } else {
+      setErrorMessages({ name: "uname", message: errors.uname });
+    }
   };
 
   const renderErrorMessage = (name) =>
@@ -78,12 +81,11 @@ function HomeSignIn() {
             <div className="app">
       <div className="login-form">
         <div className="title"></div>
-        {/* {isSubmitted
+        {isSubmitted
           ? <div>User is successfully logged in</div> && (
-              <Dashboard userTasks={taskData} loginInfo={loginInfo} teamInfo={teamInfo} refetch={refetch} setRefetch={setRefetch} setLoginInfo={setLoginInfo} currentUser={currentUser} />
+              <Feed/>
             )
-          : renderForm} */}
-          {renderForm}
+          : renderForm}
       </div>
       <button onclick={handleSignUp}> SignUp</button>
     </div>
