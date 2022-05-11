@@ -13,17 +13,17 @@ function ReviewMovieCard({poster_path, title, overview, release_date, vote_avera
         const review_body = document.getElementById("form-field").value
 
         const newReview = {poster_path, title, overview, release_date, vote_average, review_body}
-        console.log(review_body);
-        fetch(`http://localhost:3000/movie_reviews`, {
-            method: "POST",
-            headers:{
-                "Content-Type": "application/json",
-                Accepts: "application/json"
-            },
-            body: JSON.stringify(newReview)
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
+        console.log(newReview);
+        // fetch(`http://localhost:3000/movie_reviews`, {
+        //     method: "POST",
+        //     headers:{
+        //         "Content-Type": "application/json",
+        //         Accepts: "application/json"
+        //     },
+        //     body: JSON.stringify(newReview)
+        // })
+        // .then(res => res.json())
+        // .then(data => console.log(data))
         }
 
     return(
