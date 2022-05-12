@@ -1,4 +1,5 @@
  Rails.application.routes.draw do
+  resources :follows
   resources :users
   resources :movies, only: [:show, :create, :index]
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
@@ -9,6 +10,8 @@
       get :following, :followers, :other_user
     end
   end
+
+  
 
   # post "/login", to: "sessions#create"
   # get "/feed", to: "movie_reviews#index"
