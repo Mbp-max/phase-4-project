@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import ReviewMovieCard from './ReviewMovieCard';
 
-function NewReview (){
+function NewReview ({user}){
 const [searchTerm, setSearchTerm]=useState('');
 const [results, setResults] = useState([])
 
@@ -20,11 +20,12 @@ setSearchTerm(e.target.value)
 }
 
 console.log(results)
-const moviePosters= results.map(result => <ReviewMovieCard {...result} key={result.id}/>)
+const moviePosters= results.map(result => <ReviewMovieCard {...result} key={result.id} user={user}/>)
 
 return(
     <>
     <header>
+        <p>Search Movie</p>
         <form onSubmit={handleSubmit}>
         <input className="search" type="search" placeholder="Search..."
         value={searchTerm} onChange={handleOnChange}/>

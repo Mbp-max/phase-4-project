@@ -193,3 +193,8 @@ body.active-modal {
 .review-title {
   color: black;
 }
+
+.photo {
+  height: 300px;
+  width: 230px;
+}
