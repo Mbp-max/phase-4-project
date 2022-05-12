@@ -4,11 +4,11 @@ class ApplicationController < ActionController::API
 
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-  # before_action :authorize_user
+  # before_action :authorize_user 
 
   def current_user
     User.find_by(id: session[:current_user])
-  end
+end
 
   def authorize_user
     return render json: { error: "Not Authorized" }, status: :unauthorized unless current_user
