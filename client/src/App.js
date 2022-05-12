@@ -3,23 +3,18 @@ import Home from "./Home";
 import Feed from "./Feed";
 import Profile from "./Profile";
 import { Route, Routes } from "react-router-dom";
-import {useEffect} from "react"
+import HomeSignIn from './HomeSignIn';
+
 
 function App() {
-
-  useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => console.log(user));
-      }
-    });
-  }, []);
+  
 
   return (
     <div className="App">
       <header className="App-header">
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/" element={<HomeSignIn />} />
           <Route exact path="/user" element={<Feed />} />
           <Route path="/userName/*" element={<Profile />} />
         </Routes>
