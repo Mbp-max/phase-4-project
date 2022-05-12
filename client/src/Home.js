@@ -4,9 +4,8 @@ import HomeSignIn from "./HomeSignIn";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null);
+function Home({setIsAuthenticated, setUser, user}) {
+  
 
   const logout = () => {
     fetch('/logout',{
@@ -19,27 +18,7 @@ function Home() {
 }
 
 
-  useEffect(() => {
-    fetch("/authorize_user").then((res) => {
-      if (res.ok) {
-        res.json().then((user) => {
-          setIsAuthenticated(true);
-          setUser(user);
-        });
-      }
-    });
-  }, []);
-
-  console.log(user);
-  if (!isAuthenticated)
-    return (
-      <HomeSignIn
-        to="/login"
-        error={"please login"}
-        setIsAuthenticated={setIsAuthenticated}
-        setUser={setUser}
-      />
-    );
+  
 
   return (
     <div className="Home">
