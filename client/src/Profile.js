@@ -36,16 +36,7 @@ function Profile({ user }) {
         <div className="ProfileStats">
           <h1 className="UserName">{user.username} </h1>
         </div>
-        {/* <ProfileStats />
-            <ProfileStreem /> */}
         {displayingReviewCards}
-        <Routes>
-          <Route exact path="/queue" element={<ProfileQueue />} />
-          {/* <ProfileQueue />
-                <Route exact path="/userName/savedReviews">
-                    <ProfileSavedReviews />
-                </Route> */}
-        </Routes>
       </div>
     </>
   );
