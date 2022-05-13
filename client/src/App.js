@@ -18,8 +18,8 @@ function App() {
     fetch("/authorize_user").then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          setIsAuthenticated(true);
           setUser(user);
+          setIsAuthenticated(true);
         });
       }
     });
@@ -46,7 +46,7 @@ function App() {
         <Routes>
           <Route exact path="/home" element={<Home setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>} />
           <Route exact path="/signin" element={<HomeSignIn setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} />} />
-          <Route exact path="/" element={<Feed {...user}/>} />
+          <Route exact path="/" element={<Feed user={user} />} />
           <Route path="/userName/*" element={<Profile user={user} />} />
           <Route path="/signup" element={<HomeSignUp setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>} />
           <Route path="/newreview" element={<NewReview setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>} />

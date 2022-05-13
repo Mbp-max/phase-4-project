@@ -9,7 +9,8 @@ function ReviewMovieCard({
   vote_average,
   user,
 }) {
-  console.log(user.id);
+
+  console.log()
   const [reviewModal, setReviewModal] = useState(false);
   const [addMovie, setAddMovie] = useState({});
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
@@ -36,7 +37,7 @@ function ReviewMovieCard({
   };
   const { id } = addMovie;
 
-  console.log(id);
+
   const handleReviewSubmit = (e) => {
     e.preventDefault();
     const review_text = document.getElementById("review_text").value;
