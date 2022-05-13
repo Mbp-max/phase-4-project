@@ -15,13 +15,10 @@ function Nav({setIsAuthenticated, setUser, user}) {
     <header className="header sticky sticky--top js-header">
       <div className="grid">
         <nav className="navigation">
-            <h1 className="Tittle"> Your Dashboard </h1>
+            <h1 className="Tittle"> IMDB-Me </h1>
           <ul className="navigation__list navigation__list--inline">
-            <Link to="/userName/followers" className="SaveButton">
-              Followers
-            </Link>
-            <Link to="/userName/following" className="SaveButton">
-              Following
+            <Link to="/" className="SaveButton">
+              Feed
             </Link>
             <Link to="/newreview" className="SaveButton">
               New Review

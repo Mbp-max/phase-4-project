@@ -15,9 +15,9 @@ function HomeSignIn({ setIsAuthenticated, setUser, error }) {
   const handleSignUp = (event) => {
     event.preventDefault();
     const newUser = {
-      newUsername,
-      newPassword,
-      newEmail,
+      username: newUsername,
+      password: newPassword,
+      email: newEmail,
     };
 
     fetch(`/users`, {
@@ -112,7 +112,7 @@ function HomeSignIn({ setIsAuthenticated, setUser, error }) {
               <label>
                 Password:{" "}
                 <input
-                  type="newPassword"
+                  type="Password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                 />
