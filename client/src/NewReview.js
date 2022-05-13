@@ -25,9 +25,9 @@ const moviePosters= results.map(result => <ReviewMovieCard {...result} key={resu
 return(
     <>
     <header>
-        <p>Search Movie</p>
+        <p className="search-title">Search Movie</p>
         <form onSubmit={handleSubmit}>
-        <input className="search" type="search" placeholder="Search..."
+        <input placeholder="Search" class="input" name="text" type="text"
         value={searchTerm} onChange={handleOnChange}/>
         </form>
     </header>

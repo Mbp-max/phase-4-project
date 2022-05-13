@@ -27,14 +27,14 @@ function Profile({ user }) {
   console.log(currrentUserReviews);
 
   const displayingReviewCards = currrentUserReviews.map((review) => (
-    <ProfileReviewCards review={review} user={user} setRefetch={setRefetch} refetch={refetch}/>
+    <ProfileReviewCards review={review} user={user} setRefetch={setRefetch} refetch={refetch} />
   ));
 
   return (
     <>
       <div className="Profile">
         <div className="ProfileStats">
-          <h1 className="UserName">{user.username} </h1>
+          {/* <h1 className="UserName">{user.username} </h1> */}
         </div>
         {displayingReviewCards}
       </div>

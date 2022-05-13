@@ -72,27 +72,28 @@ function ReviewMovieCard({
     <div className="movie-card">
       <img src={IMG_API + poster_path} alt={title} />
       <p>{title}</p>
-      <button onClick={toggleReviewModal}> Leave A Review</button>
+      <button className="SaveButton" onClick={toggleReviewModal}> Leave A Review</button>
       {reviewModal && (
         <div className="modal" onSubmit={handleReviewSubmit}>
           <div className="overlay">
             <div className="modal-content">
               <p className="review-title">Your review For {title}</p>
-              <input
+              <input className="input"
                 placeholder="Write Your Review Here"
                 id="review_text"
               ></input>
-              <input placeholder="Your Rating" id="review_rating"></input>
+              <input className="input" placeholder="Your Rating" id="review_rating"></input>
               {/* <FaStar size={50}/> */}
-              <button className="close-modal" onClick={handleReviewSubmit}>
+              <button className="SaveButton" onClick={handleReviewSubmit}>
                 Submit
               </button>
-              <button onClick={handleCloseWindow}>X</button>
+              <button onClick={handleCloseWindow} className="SaveButton" >X</button>
             </div>
           </div>
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 }
 export default ReviewMovieCard;
