@@ -24,9 +24,9 @@ Review.create(rating: "6", review_text: "actually, bad.", user_id: user5.id, mov
 
 # puts "creating followers"
 
-# Relationship.create(follower_id: 1, followed_id: 1)
-# Relationship.create(follower_id: 2, followed_id: 1)
-# Relationship.create(follower_id: 3, followed_id: 2)
-# Relationship.create(follower_id: 4, followed_id: 2)
-# Relationship.create(follower_id: 5, followed_id: 3)
+Follow.create(follower_id: 1, following_id: 1)
+Follow.create(follower_id: 2, following_id: 1)
+Follow.create(follower_id: 3, following_id: 2)
+Follow.create(follower_id: 4, following_id: 2)
+Follow.create(follower_id: 5, following_id: 3)
 
