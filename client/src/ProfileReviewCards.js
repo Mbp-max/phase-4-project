@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function ProfileReviewCards({ review, user, setRefetch, refetch }) {
+function ProfileReviewCards({ review, user, setRefetch, refetch, setUserReviews, userReviews }) {
   const [editModal, setEditModal] = useState(false);
   const { rating, review_text, movie, id } = review;
   const { title, overview, poster_path, release_date, vote_average } = movie;
@@ -30,8 +30,8 @@ function ProfileReviewCards({ review, user, setRefetch, refetch }) {
       body: JSON.stringify(edited_review_text),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-    setRefetch(!refetch);
+      .then((data) => setUserReviews([data]));
+    // setRefetch(!refetch);
     setEditModal(!editModal);
   }
   function handleCloseWindowEdit() {
@@ -41,7 +41,6 @@ function ProfileReviewCards({ review, user, setRefetch, refetch }) {
   return (
     <>
       <div className="ReviewCards">
-        {/* <h1 className="UserName">  *insert pic* username </h1> */}
         <img src={IMG_API + poster_path} alt={title} className="photo" />
         <div className="MovieStats">
           <h1 className="MovieTitle">{title}</h1>

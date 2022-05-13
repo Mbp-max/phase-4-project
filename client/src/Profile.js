@@ -27,7 +27,9 @@ function Profile({ user }) {
   console.log(currrentUserReviews);
 
   const displayingReviewCards = currrentUserReviews.map((review) => (
-    <ProfileReviewCards review={review} user={user} setRefetch={setRefetch} refetch={refetch} />
+
+    <ProfileReviewCards setUserReviews={setUserReviews} userReviews={userReviews} review={review} user={user} setRefetch={setRefetch} refetch={refetch}/>
+
   ));
 
   return (
