@@ -8,6 +8,7 @@ import HomeSignUp from './HomeSignUp';
 import ReviewMovieCard from './ReviewMovieCard';
 import {useEffect, useState} from "react"
 import NewReview from "./NewReview";
+import Nav from './Nav';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="Home">
       <header className="App-header">
+        <Nav setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>
         <Routes>
           <Route exact path="/home" element={<Home setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>} />
           <Route exact path="/signin" element={<HomeSignIn setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} />} />

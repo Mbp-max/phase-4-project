@@ -168,7 +168,7 @@ body.active-modal {
 }
 
 .overlay {
-  background: rgba(49,49,49,0.8);
+  background: rgba(143, 128, 128, 0.8);
 }
 .modal-content {
   position: absolute;
@@ -198,3 +198,44 @@ body.active-modal {
   height: 300px;
   width: 230px;
 }
+
+
+/* css for Nav Component */
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap
+
+}
+
+.navigation__list--inline {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+.navigation__link {
+  color: inherit;
+  display: block;
+  padding-inline: 1em;
+  text-decoration: none;
+  font-size: 13px;
+  background-color: #000;
+  border-radius: 999em;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+
+}
+
+.navigation__link--is-active {
+  background-color: rgb(80, 68, 68);
+  border-radius: 999em;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  
+}
+
+
+/* CSS for the Nav  */
+

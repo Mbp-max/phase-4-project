@@ -11,7 +11,8 @@ import { Link } from "react-router-dom";
 function Profile({ user }) {
   const { id, username, email } = user;
   const [userReviews, setUserReviews] = useState([]);
-  useEffect(getUserReviews, []);
+  const [refetch, setRefetch] = useState(false);
+  useEffect(getUserReviews, [refetch]);
 
   function getUserReviews() {
     fetch("/reviews")
@@ -26,28 +27,15 @@ function Profile({ user }) {
   console.log(currrentUserReviews);
 
   const displayingReviewCards = currrentUserReviews.map((review) => (
-    <ProfileReviewCards review={review} user={user} />
+    <ProfileReviewCards review={review} user={user} setRefetch={setRefetch} refetch={refetch}/>
   ));
 
   return (
     <>
       <div className="Profile">
-        <div className="Banner">
-          <h1 className="Tittle"> Your Dashboard </h1>
+        <div className="ProfileStats">
+          <h1 className="UserName">{user.username} </h1>
         </div>
-      <div className="ProfileStats">
-        <h1 className="UserName">{user.username} </h1>
-        <Link to="/userName/followers" className="SaveButton">
-          Followers
-        </Link>
-        <Link to="/userName/following" className="SaveButton">
-          Following
-        </Link>
-        <Link to="/newreview" className="SaveButton">
-          New Review
-        </Link>
-      </div>
-
         {/* <ProfileStats />
             <ProfileStreem /> */}
         {displayingReviewCards}

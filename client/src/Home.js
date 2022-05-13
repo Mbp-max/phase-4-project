@@ -25,7 +25,7 @@ function Home({setIsAuthenticated, setUser, user}) {
       <div className="Banner">
         <h1 className="Tittle"> Ticket Stubs </h1>
       </div>
-        <button onClick={logout}>Logout</button>
+        
     </div>
   );
 }
