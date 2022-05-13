@@ -61,70 +61,81 @@ function HomeSignIn({ setIsAuthenticated, setUser, error }) {
   };
 
   return (
-      <div className="Home">
-        <div className="Banner">
-          <h1 className="Tittle"> Ticket Stubs </h1>
-        </div>
-        <HomeAbout />
-      
-      <div>Sign In</div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+    <div className="home-page" >
+      <div className="Banner">
+        <h1 className="Tittle"> Ticket Stubs </h1>
+      </div>
+      <HomeAbout />
 
-        <input type="submit" value="Log In" />
+      <div className="sign-in" >Sign In</div>
+      <form onSubmit={handleSubmit}>
+        <div className="username">
+          <label>
+            Username:{" "}
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="password">
+          <label>
+            Password:{" "}
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="submit"> <input className="SaveButton" type="submit" value="Log In" />
+        </div>
       </form>
       {errors ? <div>{errors}</div> : null}
 
-      <div>
-        Don't have an account ? Sing Up Below
+      <div className="sign-up">
+        Don't have an account ? Sign Up Below
         <>
-          <form onSubmit={handleSignUp}>
-            <label>
-              Username
-              <input
-                type="text"
-                value={newUsername}
-                onChange={(e) => setNewUsername(e.target.value)}
-              />
-            </label>
-            <label>
-              Password
-              <input
-                type="newPassword"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-              />
-            </label>
-            <label>
-              newEmail
-              <input
-                type="newEmail"
-                value={newEmail}
-                onChange={(e) => setNewEmail(e.target.value)}
-              />
-            </label>
-
-            <input type="submit" value="Login!" />
+          <form className="form" onSubmit={handleSignUp}>
+            <div className="username-signup">
+              <label>
+                Username:{" "}
+                <input
+                  type="text"
+                  value={newUsername}
+                  onChange={(e) => setNewUsername(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="password-signup">
+              <label>
+                Password:{" "}
+                <input
+                  type="newPassword"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="email-signup">
+              <label>
+                Email:{" "}
+                <input
+                  type="newEmail"
+                  value={newEmail}
+                  onChange={(e) => setNewEmail(e.target.value)}
+                />
+              </label>
+            </div>
+            <div>
+              <input type="submit" value="Sign Up!" className="SaveButton" />
+            </div>
           </form>
           {errors ? <div>{errors}</div> : null}
         </>
       </div>
-      </div>
+    </div>
   );
 }
 export default HomeSignIn;
