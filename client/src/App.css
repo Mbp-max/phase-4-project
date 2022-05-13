@@ -134,12 +134,26 @@
   
 }
 
-.ReviewCards{
-    width: 900px;
-    height: 500px;
-    background: white;
-    border-radius: 40px 0 40px 0;
+.movie-card{
+     background: #7A9CC6;
+    cursor: pointer;
+    width: 800px;
+    height: 900px;
+    border-radius: 5px;
 }
+
+.movie-card img
+{
+  width: 450px; /* width of container */
+  height: 500px; /* height of container */
+
+
+  }
+
+  .seen-it{
+    font-family: "Martina";
+  }
+
 
 .UserName{
     color:  #F082AC;
@@ -151,6 +165,11 @@
   color: black;
   font-family: "XTypewriter";
   text-align: left;
+}
+
+.MovieTitle{
+  font-family: "Capuche";
+  font-size: 50px;
 }
 
 .SaveButton {

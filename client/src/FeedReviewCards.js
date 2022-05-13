@@ -42,7 +42,7 @@ function FeedReviewCards({review, currentUser}) {
             setFeedReviewModal(!feedReviewModal);
     }
     return (
-        <div className="ReviewCards">
+        <div className="movie-card">
         {/* <h1 className="UserName">  *insert pic* username </h1> */}
         <img src={IMG_API + poster_path} alt={title} className="photo" />
         <div className="MovieStats">
@@ -54,7 +54,7 @@ function FeedReviewCards({review, currentUser}) {
             My Review: {review_text}
           </p>
           <p>Rating: {rating}</p>
-        <div>Seen it ?  </div>
+        <div className="seen-it">Seen it ?  </div>
         <button onClick={handleCloseFeedWindow}>Add Your Own Review</button>
         {feedReviewModal && (
         <div className="modal">
